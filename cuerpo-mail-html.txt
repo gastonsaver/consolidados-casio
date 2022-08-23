@@ -1,0 +1,99 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 3.0cm 70.85pt 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=ES-AR link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal>Esto es un mensaje automático, no responder</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Ya se encuentra actualizado tu reporte consolidado de visitas con la información del día de hoy.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<!-- EDITAR EL SIGUIENTE LINK AL ARCHIVO DE REFERENCIA -->
+<p class=MsoNormal>Links: <a href="view_url">visualización</a> | <a href="link_descarga">descarga</a>:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Atentamente</p>
+
+<p class=MsoNormal><a name="_MailAutoSig"><span lang=ES-MX style='font-family:
+"Arial",sans-serif;color:#1F3864'>&nbsp;</span></a></p>
+
+<p class=MsoNormal><span style='color:#1F497D'><img src="https://s3.integrago.com/integrago-bi/logos-firmas/pie_mail.jpg" border=0 width=320
+height=90"
+src="Esto%20es%20un%20mensaje%20automático_archivos/image001.jpg"
+alt="Texto&#10;&#10;Descripción generada automáticamente con confianza media"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:#1F3864'>&nbsp;</span></p>
+
+<p class=MsoNormal><i><span lang=ES style='font-size:9.0pt;color:#404040'>Uspallata
+781 1º Piso (B1638BXA) </span></i></p>
+
+<p class=MsoNormal><i><span lang=ES style='font-size:9.0pt;color:#404040'>Vicente
+López - </span></i><span lang=ES style='font-size:9.0pt;color:#404040'>Buenos
+Aires,&nbsp; Argentina</span><span lang=ES style='font-size:9.0pt;color:#7F7F7F'><br>
+
+<p class=MsoNormal><b><span lang=ES style='font-size:9.0pt;color:#C00000'>Tel:
++54 11 4796 1421 </span></b></p>
+
+</span></b><span lang=ES style='font-size:9.0pt;color:#3B3838'>Web: </span><a
+href="http://integrago.com/"><b><span lang=ES style='font-size:9.0pt;
+color:#3B3838'>http://integrago.com</span></b></a></p>
+
+<p class=MsoNormal><span lang=ES-MX style='font-size:9.0pt;color:#3B3838'>Facebook:<b>
+</b></span><a href="http://facebook.com/integralatam"><b><span lang=ES-MX
+style='font-size:9.0pt;color:#3B3838'>http://facebook.com/integralata</span></b><b><span
+lang=ES style='font-size:9.0pt;color:#3B3838'>m</span></b></a></p>
+
+<p class=MsoNormal><span lang=ES style='font-size:9.0pt;color:#3B3838'>Twitter:
+<b>@integralatam</b></span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

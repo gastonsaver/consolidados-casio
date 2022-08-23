@@ -1,0 +1,28 @@
+{
+    "consolidado-ferrero":
+        {
+            "client_name": "Casio",
+            "db_name": "030_ar_casio",
+            "bucket_name": "030-ar-casio",
+            "cuerpo_mail": "cuerpo-mail.txt",
+            "minio_folder": "consolidados-varios",
+            "file_name": "consolidado_visitas.xlsx",
+            "email_sender": "Reporting - IntegraGO | Smollan",
+            "email_subject": "{} Consolidado de Visitas",
+            "html_text": "cuerpo-mail-html.txt",
+            "mail_text": "cuerpo-mail.txt",
+            "emails_list": [
+                "gsaver@integrago.com",
+                "martinc@integrago.com",
+                "csquillari@integrago.com",
+                "efuentes@integrago-prisma.com",
+                "kmayumi@casio.com.br"
+            ],
+            "emails_list_cco": [
+                "lautyiosaver@gmail.com"
+            ],
+            "pie_mail": "pie_mail.jpg",
+            "link": "https://s3.integrago.com/030-ar-ferrero/consolidados-varios/consolidado_visitas.xlsx",
+            "survey_query": "SELECT id, pointOfSale_id, repliedAt, FormFieldLabelEng, FormFieldNameEng, valueEng FROM SurveyFastView  where form_id IN (476,494,497,499) AND FormFieldName NOT IN ('Nombre de Fantasia', 'Provincia', 'Ciudad', 'Barrio', 'Dirección','Altura', 'Complemento (Piso - Nro. de Local)','Codigo Postal', 'Horario Comercial', 'Razón Social', 'Cadena', 'Perfil del PDV', 'Canal del PDV', 'Los Datos del PDV son Correctos?', 'Se Realizo el Relevamiento?', 'Razón Social / Nombre Títular',  'CUIT / CUIL (sin guiones)', 'Otros Tipos de PDV', 'Otros Tipos de PDV', 'Motivo', 'Desplegar preguntas Exhibición', 'Desplegar preguntas Distribuidor', 'Desplegar preguntas Compras', '1734 - Motivos por el cual no se realizó la capacitación', 'Zona Comercial') AND deleted=0 AND value<>''"
+        }
+}
