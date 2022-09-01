@@ -5,6 +5,7 @@
 # Creó: @gs
 # Actualizó:
 
+from secrets import choice
 import pandas as pd
 import numpy as np
 from datetime import datetime, date
@@ -43,8 +44,9 @@ def send_mail():
     print('Enviando mail automático al destinatario')
 
     # El link de descarga del archivo
-    download_link = 'https://s3.integrago.com/' + bucket_name + "/" + object_name
-    view_url = f'https://view.officeapps.live.com/op/view.aspx?src={download_link}&wdOrigin=BROWSELINK'
+    download_link = config['link']
+    pbi_link = config['pbi_link']
+    view_url = f'https://view.officeapps.live.com/op/embed.aspx?src={download_link}&wdOrigin=BROWSELINK'
     # Modificar este link también en el HTML
 
     # Crear el contenedor del mensaje - el tipo MIME correcto es multipart/alternative.
@@ -60,7 +62,7 @@ def send_mail():
     # Crear el cuerpo del mensaje (una versión texto y una versión HTML).
     # Este texto podria encontrarse en un archivo paralelo
     with open(config['cuerpo_mail'], 'r') as f:
-        text = f.read().format(view_url, download_link)
+        text = f.read().format(pbi_link, view_url, download_link)
     f.close()
 
     # Abrir el archivo que contiene el cógido HTML
@@ -70,6 +72,7 @@ def send_mail():
 
     html = content.replace('link_descarga', download_link)
     html = html.replace('view_url', view_url)
+    html = html.replace('pbi_url', pbi_link)
 
     # Grabar el tipo MIME de ambas partes - text/plain y text/html.
     part1 = MIMEText(text, 'plain')
@@ -85,8 +88,8 @@ def send_mail():
         server.login(mail_user, mail_pass)
         print('Inicio de sesión')
         server.sendmail(mail_user, config['emails_list'], msg.as_string())
-        
-        
+
+
 # -----------------------------------------------------------------------------
 # CODIGO PRINCIPAL
 
@@ -154,8 +157,10 @@ surveys['repliedAt'] = pd.to_datetime(surveys['repliedAt']).dt.date
 create_pos_survey = surveys[surveys['pointOfSale_id'].isnull()]
 surveys = surveys[~surveys['pointOfSale_id'].isnull()]
 
-surveys.drop(columns=['id'], inplace=True)
+#surveys.drop(columns=['id'], inplace=True)
+surveys.rename(columns={'id':'surveyId'}, inplace=True)
 create_pos_survey.drop(columns=['pointOfSale_id'], inplace=True)
+create_pos_survey.rename(columns={'id':'surveyId'}, inplace=True)
 
 # Hacemos los joins con tabla de puntos de venta // Hay que hacer Join de las encuestas de puntos de venta y por separado con aquellas que tienen datos de alta de PDV
 surveys = pd.merge(left=surveys,
@@ -168,11 +173,11 @@ surveys.drop(columns=['id', 'number', 'code', 'pointOfSale_id'], inplace=True)
 create_pos_survey = pd.merge(left=create_pos_survey,
                              right=pos,
                              how='left',
-                             left_on='id',
+                             left_on='surveyId',
                              right_on='code')
 create_pos_survey['address'] = create_pos_survey['address'] + ' ' + create_pos_survey['number']
 create_pos_survey['Is the POS Open?'] = 'YES'
-create_pos_survey.drop(columns=['id_x', 'id_y', 'number', 'code'], inplace=True)
+create_pos_survey.drop(columns=['id', 'number', 'code'], inplace=True)
 
 surveys = pd.concat([surveys, create_pos_survey], ignore_index=True)
 surveys = surveys[surveys['Is the POS Open?'] == 'YES']
@@ -209,8 +214,16 @@ surveys.rename(columns=
                 },
                inplace=True)
 
+# Crear la columna period a partir de la cantidad de visitas mensuales que se definen por presupuesto
+condlist = [surveys['surveyId'] <= 37244082]
+choicelist = [datetime.strptime('1/8/2022', '%d/%m/%Y').date()]
+
+surveys['period'] = np.select(condlist=condlist, choicelist=choicelist, default=datetime.strptime('1/9/2022', '%d/%m/%Y').date())
+
+
 # Ordenar columnas
-order = [
+order = ['surveyId',
+         'period',
          'POS Name',
          'POS Type',
          'POS Type Others',

@@ -46,12 +46,12 @@ div.WordSection1
 
 <p class=MsoNormal>&nbsp;</p>
 
-<p class=MsoNormal>Ya se encuentra actualizado tu reporte consolidado de visitas con la información del día de hoy.</p>
+<p class=MsoNormal>Ya se encuentra actualizado tu reporte.</p>
 
 <p class=MsoNormal>&nbsp;</p>
 
 <!-- EDITAR EL SIGUIENTE LINK AL ARCHIVO DE REFERENCIA -->
-<p class=MsoNormal>Links: <a href="view_url">visualización</a> | <a href="link_descarga">descarga</a>:</p>
+<p class=MsoNormal>Links: <a href="pbi_url">PowerBI</a> | <a href="view_url">visualización</a> | <a href="link_descarga">descarga</a>:</p>
 
 <p class=MsoNormal>&nbsp;</p>
 
