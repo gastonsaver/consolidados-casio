@@ -39,7 +39,7 @@ loader = importlib.machinery.SourceFileLoader('mylib', lib_path)
 my = loader.load_module('mylib')
 
 def send_mail():
-    
+
 
     print('Enviando mail automático al destinatario')
 
@@ -95,7 +95,7 @@ def send_mail():
 
 #Abre archivo de configuraciones de la presentación y direcciones de mail de envio automático
 with open('config.json', 'r', encoding='utf-8') as f:
-    config = json.load(f)['consolidado-ferrero']
+    config = json.load(f)['consolidado-casio']
 f.close()
 
 db_name = config['db_name']
@@ -189,7 +189,7 @@ surveys['I agree to receive informative emails from CASIO'] = np.where(
     surveys['I agree to receive informational emails from CASIO - Does not market'],
     surveys['I agree to receive informative emails from CASIO'])
 surveys['POS location'] = np.where(
-    surveys['POS location'] == '',
+    surveys['POS location'].isna(),
     surveys['Location'],
     surveys['POS location'])
 surveys['phone'] = np.where(
@@ -215,10 +215,15 @@ surveys.rename(columns=
                inplace=True)
 
 # Crear la columna period a partir de la cantidad de visitas mensuales que se definen por presupuesto
-condlist = [surveys['surveyId'] <= 37244082]
-choicelist = [datetime.strptime('1/8/2022', '%d/%m/%Y').date()]
+condlist = [surveys['surveyId'] <= 37268110,
+            (surveys['surveyId'] > 37268110) & (surveys['surveyId'] <= 38158755),
+            (surveys['surveyId'] > 38158755) & (surveys['surveyId'] <= 39160962)
+            ]
+choicelist = [datetime.strptime('1/8/2022', '%d/%m/%Y').date(),
+              datetime.strptime('1/9/2022', '%d/%m/%Y').date(),
+              datetime.strptime('1/10/2022', '%d/%m/%Y').date(),]
 
-surveys['period'] = np.select(condlist=condlist, choicelist=choicelist, default=datetime.strptime('1/9/2022', '%d/%m/%Y').date())
+surveys['period'] = np.select(condlist=condlist, choicelist=choicelist, default=datetime.strptime('1/11/2022', '%d/%m/%Y').date())
 
 
 # Ordenar columnas
@@ -323,7 +328,7 @@ object_name = folder + "/" + file_name
 try:
     minio_client.fput_object(bucket_name, object_name, file_name,)
     print("El archivo fue cargado con éxito")
-    send_mail()
+    #send_mail()
 except S3Error as exc:
     print("Ha ocurrido un error.", exc)
 

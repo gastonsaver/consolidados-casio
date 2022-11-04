@@ -1,5 +1,5 @@
 {
-    "consolidado-ferrero":
+    "consolidado-casio":
         {
             "client_name": "Casio",
             "db_name": "030_ar_casio",
@@ -16,7 +16,9 @@
                 "martinc@integrago.com",
                 "csquillari@integrago.com",
                 "efuentes@integrago-prisma.com",
-                "kmayumi@casio.com.br"
+                "kmayumi@casio.com.br",
+                "scorrea@casio.com.br",
+                "pcarvalho@casio.com.br"
             ],
             "emails_list_cco": [
                 "lautyiosaver@gmail.com"
