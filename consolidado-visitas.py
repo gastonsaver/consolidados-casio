@@ -328,7 +328,7 @@ object_name = folder + "/" + file_name
 try:
     minio_client.fput_object(bucket_name, object_name, file_name,)
     print("El archivo fue cargado con éxito")
-    #send_mail()
+    send_mail()
 except S3Error as exc:
     print("Ha ocurrido un error.", exc)
 
